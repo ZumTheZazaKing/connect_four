@@ -1,3 +1,40 @@
 body{
     background-color: burlywood;
+
+    .App{
+
+        #Main{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #board{
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto;
+                padding: 10px;
+                background-color: whitesmoke;
+                .cell{
+                    width:50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .token{
+                        border: 2px solid black;
+                        width: 80%;
+                        height: 80%;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        background-color: lightgrey;
+                    }
+                    .player-one{background-color: orange;}
+                    .player-two{background-color: crimson;}
+                }
+            }
+
+        }
+
+    }
+
 }

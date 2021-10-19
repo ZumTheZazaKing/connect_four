@@ -1,5 +1,37 @@
 body {
   background-color: burlywood;
 }
+body .App #Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .App #Main #board {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+body .App #Main #board .cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .App #Main #board .cell .token {
+  border: 2px solid black;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: lightgrey;
+}
+body .App #Main #board .cell .player-one {
+  background-color: orange;
+}
+body .App #Main #board .cell .player-two {
+  background-color: crimson;
+}
 
 /*# sourceMappingURL=App.css.map */
