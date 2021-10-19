@@ -2,14 +2,23 @@
 * {
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: #212244;
 }
-body .App #Main {
+body .App #loading {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: white;
+}
+body .App #Main {
+  display: flex;
   align-items: center;
   flex-direction: column;
 }
@@ -45,6 +54,7 @@ body .App #Main #board .cell .player-two {
 }
 body .App #Main h2, body .App #Main h1 {
   color: white;
+  margin: 20px;
 }
 
 .hidden {

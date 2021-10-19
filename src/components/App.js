@@ -124,7 +124,7 @@ function App() {
   return (
     <div className="App">
       
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<div id="loading"><h1>Loading...</h1></div>}>
         <Context.Provider value={{
           gameState, dispatchGameState,
           play, newGame
