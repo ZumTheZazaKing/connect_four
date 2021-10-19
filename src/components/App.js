@@ -14,7 +14,8 @@ function App() {
         return {
           ...state,
           board:action.board,
-          currentPlayer:action.nextPlayer
+          currentPlayer:action.nextPlayer,
+          message:action.message
         }
 
       case "endGame":
@@ -49,7 +50,7 @@ function App() {
       "", "", "", "", "", "", "",
     ],
     gameOver:false,
-    message:''
+    message:'Yellow\'s Turn'
   }
 
   const [gameState, dispatchGameState] = useReducer(gameReducer, initialGameState);
@@ -59,6 +60,8 @@ function App() {
   }
 
   const checkBoard = (board) => {
+
+    if(!board.includes(""))dispatchGameState({type:"endGame", message:"Draw"})
 
     for (var i = 0; i < winningArrays.length; i++){
       const square1 = board[winningArrays[i][0]];
@@ -96,6 +99,10 @@ function App() {
       ? gameState.player2
       : gameState.player1
 
+    let message = gameState.currentPlayer === gameState.player1
+      ? "Red's Turn"
+      : "Yellow's Turn"
+
     let index = parseInt(e.target.id);
     let validAddition = 7;
 
@@ -111,7 +118,7 @@ function App() {
       } else {
         board[index] = "player-two";
       }
-      dispatchGameState({type:"togglePlayer", board, nextPlayer});
+      dispatchGameState({type:"togglePlayer", board, nextPlayer, message});
     }
     checkBoard(board);
   }
