@@ -5,6 +5,7 @@ body .App #Main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 body .App #Main #board {
   display: grid;
@@ -32,6 +33,10 @@ body .App #Main #board .cell .player-one {
 }
 body .App #Main #board .cell .player-two {
   background-color: crimson;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=App.css.map */
