@@ -58,7 +58,7 @@ function App() {
     dispatchGameState({type:"newGame"})
   }
 
-  const checkWin = (board) => {
+  const checkBoard = (board) => {
 
     for (var i = 0; i < winningArrays.length; i++){
       const square1 = board[winningArrays[i][0]];
@@ -72,7 +72,7 @@ function App() {
         square3 === "player-one" &&
         square4 === "player-one"
       ){
-        dispatchGameState({type:"endGame", message:"Player One Wins"});
+        dispatchGameState({type:"endGame", message:"Yellow Wins"});
       }
       if(
         square1 === "player-two" &&
@@ -80,7 +80,7 @@ function App() {
         square3 === "player-two" &&
         square4 === "player-two"
       ){
-        dispatchGameState({type:"endGame", message:"Player Two Wins"});
+        dispatchGameState({type:"endGame", message:"Red Wins"});
       }
 
     }
@@ -113,7 +113,7 @@ function App() {
       }
       dispatchGameState({type:"togglePlayer", board, nextPlayer});
     }
-    checkWin(board);
+    checkBoard(board);
   }
 
   
